@@ -138,7 +138,7 @@ nav {
     z-index: 5;
     top: 50px;
     transition: all 0.5s ease;
-    width: calc(100% - var(--px) - var(--px));
+    width: calc(100% - var(--px)*2);
     padding: 40px 0;
     background-color: var(--white);
     border-radius: 5px;
@@ -405,6 +405,11 @@ button:is(:hover, :focus) {
     gap: 2rem;
   }
 
+  nav {
+    width: calc(100% - var(--px)*4);
+    margin-left: var(--px);
+  }
+
   .footer_container {
     display: grid;
     grid-template-columns: auto auto;
@@ -455,6 +460,11 @@ button:is(:hover, :focus) {
     font-size: 1rem;
     border-radius: 35px;
   } 
+
+  nav {
+    width: calc(100% - var(--px)*8);
+    margin-left: calc(var(--px)*3);
+  }
 
   .about_h3 {
     font-size: 1.2rem;
@@ -526,28 +536,31 @@ button:is(:hover, :focus) {
 
   display: grid;
   grid-template-columns: 1fr 0.8fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   column-gap: 1rem;
+  overflow: hidden;
 }
 
 .home_img {
   grid-column: 2 / 3;
-  grid-row: 1 / 6;
+  grid-row: 1 / 5;
+  width: 140%;
 }
 
 .home_h2 {
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
-  margin-top: 40px;
+  grid-row: 2 / 3;
+  font-size: 3rem;
 }
 .home_p  {
   grid-column: 1 / 2;
-  grid-row: 4 / 5;
+  grid-row: 3 / 4;
   margin-top: 20px;
 }
 .home_container > button {
   grid-column: 1 / 2;
-  grid-row: 5 / 6;
+  grid-row: 3 / 4;
+  margin-top: 100px;
 }
 
 
@@ -604,6 +617,26 @@ button:is(:hover, :focus) {
 
 
 
+@media screen and (min-width: 1100px) {
+  .home_container {
+    background-position: 620px;
+  }
+
+  .home_h2 {
+    font-size: 3.3rem;
+  }
+}
+
+
+
+@media screen and (min-width: 1300px) {
+  .home_container {
+    background-position: 720px;
+  }
+}
+
+
+
 @media screen and (min-width: 1440px) {
   :root {
     --px: 110px;
@@ -611,6 +644,10 @@ button:is(:hover, :focus) {
 
   header {
     height: 65px;
+  }
+
+  .home_container {
+    background-position: 820px;
   }
 
 }
